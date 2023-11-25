@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feira de Empreendedorismo</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="./imgs/WhatsApp Image 2023-11-21 at 07.55.44.jpeg" width="80">
+    </div>
+    <nav>
+      <ul class="menu">
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Produtos</a></li>
+        <!-- Coloque seu carrinho aqui -->
+        <li>
+          <button id="carrinhoBtn" onclick="exibirCarrinho()">
+            <img src="./imgs/vista-lateral-vazia-do-carrinho-de-compras.png" alt="Carrinho">
+          </button>
+        </li>
+      </ul>
+    </nav>
+    <button class="menu-toggle">&#9776;</button> <!-- Ícone do menu hambúrguer -->
+    <nav class="menuCel">
+      <ul>
+        <li><a href="#">Iníco</a></li>
+        <li><a href="#">Produtos</a></li>
+        <li>
+          <button id="carrinhoBtn" onclick="exibirCarrinho()">
+            <img src="./imgs/vista-lateral-vazia-do-carrinho-de-compras.png" alt="Carrinho">
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="slick-carousel">
+      <div class="carousel-slide">
+        <h2>Bem-Vindo</h2>
+        <p>Bem-vindo ao nosso site da nossa feira de empreendedorismo.</p>
+      </div>
+      <div class="carousel-slide">
+        <h2>Pirulitos</h2>
+        <p>Abaixo você encontra os nossos produtos, fique a vontade para escolher.</p>
+      </div>
+      <!-- Adicione mais slides conforme necessário -->
+    </div>
+
+    <section class="products">
+      <div class="product">
+        <img src="./imgs/WhatsApp Image 2023-11-23 at 21.18.45.jpeg" alt="Pirulito Trufado de Chocolate" class="product-image">
+        <h2 class="product-title">Pirulito de Brigadeiro</h2>
+        <h3>R$5,00</h3>
+        <button onclick="adicionarAoCarrinho('Pirulito Trufado de Chocolate', 5.00)">Adicionar ao Carrinho</button>
+      </div>
+      
+      <div class="product">
+        <img src="./imgs/WhatsApp Image 2023-11-23 at 21.18.45.jpeg" alt="Pirulito Trufado de Morango" class="product-image">
+        <h2 class="product-title">Pirulito de Beijinho</h2>
+        <h3>R$5,00</h3>
+        <button onclick="adicionarAoCarrinho('Pirulito Trufado de Morango', 5.00)">Adicionar ao Carrinho</button>
+      </div>
+      
+      <div class="product">
+        <img src="./imgs/WhatsApp Image 2023-11-23 at 21.18.45.jpeg" alt="Pirulito Trufado de Baunilha" class="product-image">
+        <h2 class="product-title">Pirulito de Mousse de Maracujá</h2>
+        <h3>R$5,00</h3>
+        <button onclick="adicionarAoCarrinho('Pirulito Trufado de Baunilha', 5.00)">Adicionar ao Carrinho</button>
+      </div>
+    </section>
+
+    <aside class="cart">
+      
+      <div id="modalCarrinho" class="modal">
+        <div class="modal-content">
+          <span class="fechar" onclick="fecharCarrinho()">&times;</span>
+          <ul id="carrinhoItensModal"></ul>
+          <p id="totalCarrinhoModal">Total: R$ 0,00</p>
+          <button onclick="limparCarrinho()">Limpar Carrinho</button>
+        </div>
+      </div>
+
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">&copy; 2023 Feira de Empreendedorismo</p>
+    </div>
+  </footer>
+
+  <script src="./scripts/app.js"></script>
+  <script src="./scripts/app.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.slick-carousel').slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        prevArrow: '<button type="button" class="slick-prev">&#8249;</button>',
+        nextArrow: '<button type="button" class="slick-next">&#8250;</button>'
+      });
+    });
+  </script>
+</body>
+</html>
